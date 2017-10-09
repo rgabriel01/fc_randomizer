@@ -7,3 +7,9 @@
       = form_tag(controller: :lead_dates, action: :create) do
         = text_field_tag :lead_id, '', class: 'form-control mb10'
         = button_tag 'Generate random dates', type: :submit, class: 'btn btn-block btn-default'
+
+.container.mt10.text-center
+  .row
+    .col-xs-12
+      %a{href:"#{lead_dates_path}"}
+        Go To Dashboard
