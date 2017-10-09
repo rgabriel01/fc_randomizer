@@ -1,0 +1,9 @@
+.container.text-center.mt100
+  .row
+    .col-xs-12
+      %h1 Enter lead id
+  .row
+    .col-xs-12.pl20p.pr20p
+      = form_tag(controller: :lead_dates, action: :create) do
+        = text_field_tag :lead_id, '', class: 'form-control mb10'
+        = button_tag 'Generate random dates', type: :submit, class: 'btn btn-block btn-default'
