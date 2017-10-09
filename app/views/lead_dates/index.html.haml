@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-xs-12
+      %h1 Leads with 3 Dates
+  .row
+    .col-xs-12
+      %table.table.table-condensed
+        %tr
+          %th
+            Lead ID
+          %th
+            First Date
+          %th
+            Second Date
+          %th
+            Third Date
+        - @lead_dates.each do |lead_date|
+          %tr
+            %th= lead_date.lead_id
+            %th= lead_date.first_date
+            %th= lead_date.second_date
+            %th= lead_date.third_date
+
+

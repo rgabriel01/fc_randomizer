@@ -1,6 +1,10 @@
 class LeadDatesController < ApplicationController
   require 'csv'
 
+  def index
+    @lead_dates = LeadDate.all
+  end
+
   def create
     lead_id = params[:lead_id]
 
