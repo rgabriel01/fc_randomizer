@@ -35,7 +35,9 @@ class LeadDatesController < ApplicationController
     while dates.length < 3 do
       temp_date = rand(3.months).seconds.ago
       months_array = dates.map{|dt| dt.month}
-      dates.push(temp_date) unless months_array.include?(temp_date.month)
+      temp_date_not_in_list = !months_array.include?(temp_date.month)
+      temp_date_not_current_month = !(temp_date.month == Time.now.month)
+      dates.push(temp_date) if temp_date_not_in_list && temp_date_not_current_month
     end
     dates
   end
