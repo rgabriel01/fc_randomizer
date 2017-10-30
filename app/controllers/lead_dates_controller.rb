@@ -33,10 +33,12 @@ class LeadDatesController < ApplicationController
   def generate_random_date
     dates = []
     while dates.length < 3 do
-      temp_date = rand(3.months).seconds.ago
+      temp_date = rand(4.months).seconds.ago
+      puts temp_date
       months_array = dates.map{|dt| dt.month}
       temp_date_not_in_list = !months_array.include?(temp_date.month)
       temp_date_not_current_month = !(temp_date.month == Time.now.month)
+      puts temp_date_not_in_list && temp_date_not_current_month
       dates.push(temp_date) if temp_date_not_in_list && temp_date_not_current_month
     end
     dates
